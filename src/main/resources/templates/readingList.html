@@ -4,7 +4,60 @@
     <meta charset="UTF-8"/>
     <title>Reading List</title>
 </head>
+<style rel="stylesheet" type="text/css" >
+    body {
+        background-color: #cccccc;
+        font-family: Arial,helvetica,sans-serif;
+    }
+    .bookHeadline {
+        font-size: 12pt;
+        font-weight:bold;
+    }
+    .bookDescription {
+        font-size: 10pt;
+    }
+    label {
+        font-weight: bold;
+    }
+</style>
 <body>
+    <h2>
+        <div th:unless="${#lists.isEmpty(books)}">
+            <dl th:each="book : ${books}">
+                <dt class="bookHeadline">
+                    <span th:text="${book.title}">Title</span>
+                    <span th:text="${book.author}">Author</span>
+                    (ISBN: <span th:text="${book.isbn}">ISBN</span>)
+                </dt>
+                <dd class="bookDescription">
+                    <span th:if="${book.description}" th:text="${book.description}">Description</span>
+                    <span th:if="${book.description eq null}">NO description available</span>
+                </dd>
+            </dl>
+        </div>
+        <div th:if="${#lists.isEmpty(books)}">
+            <p>you have no books in you book list</p>
+        </div>
+        <hr/>
+        <h3>Add a book</h3>
+        <div>
+            <form action="" method="post">
+                <label for="title">Title</label>
+                <input type="text" name="title" size="50"></input><br/>
 
+                <label for="author">Author</label>
+                <input type="text" name="author" size="50"></input><br/>
+
+                <label for="isbn">ISBN:</label>
+                <input type="text" name="isbn" size="20"></input><br/>
+
+                <label for="description">Description</label>
+                <textarea name="description" id="" cols="80" rows="5"></textarea><br/>
+                <input type="submit"></input>
+            </form>
+
+
+        </div>
+    </h2>
 </body>
 </html>
