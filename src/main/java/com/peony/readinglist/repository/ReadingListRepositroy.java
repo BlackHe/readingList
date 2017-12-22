@@ -12,4 +12,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface ReadingListRepositroy extends JpaRepository<Book,Integer>{
 
     List<Book> findByReader(String reader);
+
 }

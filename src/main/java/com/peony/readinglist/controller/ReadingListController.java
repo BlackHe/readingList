@@ -2,11 +2,14 @@ package com.peony.readinglist.controller;
 
 import com.peony.readinglist.entity.Book;
 import com.peony.readinglist.repository.ReadingListRepositroy;
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -45,7 +48,11 @@ public class ReadingListController {
     }
 
     @PostMapping("/{reader}")
-    public String addToReadingList(@PathVariable("reader") String reader,Book book){
+    public String addToReadingList(@PathVariable("reader") String reader, @Valid Book book, BindingResult bindingResult){
+        if (bindingResult.hasErrors()) {
+            System.out.println(bindingResult.getFieldError().getDefaultMessage());
+            return null;
+        }
         book.setReader(reader);
         readingListRepositroy.save(book);
         return "redirect:/readingList/{reader}";
