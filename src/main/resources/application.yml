@@ -2,7 +2,11 @@
 app:
   name: readinglist
 server:
-  port: 9060
+  port: 8443
+  ssl:  #https 配置
+    key-store: classpath:mykeys.jks
+    key-store-password: 123456
+    key-password: 123456
 spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/readinglist?useSSL=false
@@ -16,3 +20,4 @@ spring:
     show-sql: true
   thymeleaf:
     mode: LEGACYHTML5
+    cache: false
