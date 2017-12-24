@@ -21,3 +21,11 @@ spring:
   thymeleaf:
     mode: LEGACYHTML5
     cache: true
+
+logging:
+  #level:
+    #root: warn
+    #org.springframework.security: debug
+  path: E:\maven.Code\readingList>
+  file: readinglist.log
+
