@@ -20,4 +20,4 @@ spring:
     show-sql: true
   thymeleaf:
     mode: LEGACYHTML5
-    cache: false
+    cache: true
