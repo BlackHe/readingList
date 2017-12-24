@@ -12,7 +12,7 @@ import javax.validation.constraints.Min;
  * User:black
  * description:实体类
  */
-@Entity
+//@Entity
 @Data
 public class Book {
 

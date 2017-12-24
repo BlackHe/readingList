@@ -29,3 +29,6 @@ logging:
   path: E:\maven.Code\readingList>
   file: readinglist.log
 
+amazon:
+  associateId: blash-blash
+

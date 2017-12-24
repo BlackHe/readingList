@@ -15,7 +15,7 @@ import java.util.Collection;
  * User:black
  * description:
  */
-@Entity
+//@Entity
 @Data
 public class Reader implements UserDetails{
 
