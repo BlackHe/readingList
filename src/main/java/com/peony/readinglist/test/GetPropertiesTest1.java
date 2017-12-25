@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @ConfigurationProperties(prefix = "amazon")
-public class GetPropertiesTest {
+public class GetPropertiesTest1 {
 
     private String associateId;
 
