@@ -1,24 +1,19 @@
 package com.peony.readinglist.test;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Controller;
+import com.peony.readinglist.bean.AmazonPropertiesBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@ConfigurationProperties(prefix = "amazon")
-public class GetPropertiesTest1 {
+public class GetPropertiesTest2 {
 
-    private String associateId;
+    @Autowired
+    private AmazonPropertiesBean amazonProperties;
 
-    @GetMapping("/getProperties")
+    @GetMapping("/getProperties2")
     public String getProperties() {
-        System.out.println(this.associateId);
-        return this.associateId;
+        System.out.println(this.amazonProperties.getAssociateId());
+        return this.amazonProperties.getAssociateId();
     }
-
-    public void setAssociateId(String associateId) {
-        this.associateId = associateId;
-    }
-
 }

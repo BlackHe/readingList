@@ -20,8 +20,9 @@ spring:
     show-sql: true
   thymeleaf:
     mode: LEGACYHTML5
-    cache: true
-
+    cache: false
+  profiles:
+    active: proc
 logging:
   #level:
     #root: warn
@@ -29,6 +30,26 @@ logging:
   path: E:\maven.Code\readingList>
   file: readinglist.log
 
-amazon:
-  associateId: blash-blash
+---
 
+spring:
+  profiles: test
+
+amazon:
+  associateId: test--blash-blash
+
+---
+
+spring:
+  profiles: dev
+
+amazon:
+  associateId: dev--blash-blash
+
+---
+
+spring:
+  profiles: proc
+
+amazon:
+  associateId: proc--blash-blash
