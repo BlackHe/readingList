@@ -10,3 +10,7 @@ spring boot 实战练习项目  ，参考书籍《spring boot 实战》
 6、web容器：tomcat7.0.58    <br>
 7、spring aop 注解开发 <br>
 8、消息中间件-activiMQ联系 <br>
+
+
+### 
+1、正在研究微信小程序，小程序的服务端就用此 spring boot项目
